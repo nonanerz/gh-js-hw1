@@ -12,7 +12,7 @@ var findMinMaxSum = function (array) {
 
     for(var key in array) {
 
-        if (!isNaN(array[key])) {
+        if (!isNaN(array[key]) && typeof (array[key]) !== 'string') {
             sum += array[key];
             min = array[key] < min ? array[key] : min;
             max = array[key] > max ? array[key] : max;
