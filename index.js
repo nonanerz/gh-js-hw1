@@ -29,6 +29,28 @@ var findMinMaxSum = function (array) {
     }
 };
 
+var findMinMaxSum2 = function (array) {
+
+    var sum = null;
+    min = null;
+    max = null;
+
+    for(var count = 0;count < array.length; count++) {
+
+        if (!isNaN(array[count]) && typeof (array[count]) === 'number') {
+            sum += array[count];
+            min = (array[count] < min || min === null) ? array[count] : min;
+            max = (array[count] > max || max === null) ? array[count] : max;
+        }
+    }
+
+    return {
+        'max': max,
+        'min': min,
+        'sum': sum
+    }
+};
+
 
 console.log(findMinMaxSum(first));
 console.log(findMinMaxSum(second));
@@ -38,6 +60,15 @@ console.log(findMinMaxSum(fifth));
 console.log(findMinMaxSum(sixth));
 console.log(findMinMaxSum(seventh));
 console.log(findMinMaxSum(eighth));
+console.log('----------------');
+console.log(findMinMaxSum2(first));
+console.log(findMinMaxSum2(second));
+console.log(findMinMaxSum2(third));
+console.log(findMinMaxSum2(fourth));
+console.log(findMinMaxSum2(fifth));
+console.log(findMinMaxSum2(sixth));
+console.log(findMinMaxSum2(seventh));
+console.log(findMinMaxSum2(eighth));
 
 
 
